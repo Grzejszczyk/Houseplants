@@ -1,0 +1,49 @@
+﻿@model Houseplant
+
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data">
+    <input type="hidden" asp-for="HouseplantId" />
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ImageFile"></label>
+        <input asp-for="ImageFile" accept="image/*" />
+    </div>
+    <div class="form-group">
+        <label asp-for="NameLatin"></label>
+        <input asp-for="NameLatin" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Miniatura</label>
+        <input class="form-control-file" />
+    </div>
+    <div class="form-group">
+        <label>Galeria zdjęć</label>
+    </div>
+    <div class="form-group">
+        <label asp-for="BuyDate"></label>
+        <input type="date" asp-for="BuyDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="LastPlantDate"></label>
+        <input type="date" asp-for="LastPlantDate" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PlaceName"></label>
+        <input asp-for="PlaceName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="IrrigationDescription"></label>
+        <input asp-for="IrrigationDescription" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Fertigation"></label>
+        <input asp-for="Fertigation" class="form-control" />
+    </div>
+    <div class="text-center">
+        <button class="btn btn-primary" type="submit">Zapisz</button>
+        <a asp-action="Index" class="btn btn-secondary">Anuluj</a>
+    </div>
+</form>

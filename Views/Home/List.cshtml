@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Houseplant>
+
+@foreach (var item in Model)
+{
+    <div>
+        <p>@item.Name</p>
+        <p>@item.NameLatin</p>
+    </div>
+}

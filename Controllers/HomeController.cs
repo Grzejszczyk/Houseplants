@@ -12,15 +12,17 @@ namespace Houseplants.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private IHouseplantRepository repoHouseplants;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IHouseplantRepository repo)
         {
             _logger = logger;
+            repoHouseplants = repo;
         }
 
         public IActionResult Index()
         {
-            return View();
+            return View(repoHouseplants.Houseplants);
         }
 
         public IActionResult Privacy()

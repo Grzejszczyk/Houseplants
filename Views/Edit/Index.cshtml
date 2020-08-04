@@ -1,0 +1,19 @@
+﻿@model IEnumerable<Houseplant>
+
+@foreach (var i in Model)
+{
+    <div>@i.Name</div>
+    <form method="post">
+        <a asp-action="Edit" class="btn btn-warning" asp-route-HouseplantId="@i.HouseplantId">Edit</a>
+        <input type="hidden" name="HouseplantId" value="@i.HouseplantId" />
+        <a asp-action="Delete" class="btn btn-danger" asp-route-HouseplantId="@i.HouseplantId">Delete</a>
+    </form>
+    @if (i.Thumbnail != null)
+    {
+        var base64 = Convert.ToBase64String(i.Thumbnail);
+        var imgSrc = String.Format("data:image/*;base64,{0}", base64);
+
+        <img src="@imgSrc" />
+    }
+
+}
